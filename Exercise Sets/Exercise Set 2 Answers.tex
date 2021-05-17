@@ -1,0 +1,227 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{enumerate}
+\setlength\parindent{0pt}
+\usepackage{amssymb}
+\setcounter{section}{-1}
+\title{MA 1971 Exercise Set 2 Answers}
+\author{Hubert J. Farnsworth}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+Let $x \in (A \cap B)^c$. Then $x \not \in A\cap B$, which means $x \not \in A$ of $x \not \in B$. Equivalently, $x \in A^c$ or $B^c$. Thus $x \in A^c \cup B^c$. Therefore $ (A \cap B)^c \subseteq A^c \cup B^c$. Each of these steps is reversible. Therefore we have also $ (A \cap B)^c \supseteq A^c \cup B^c$.
+
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+Let $x \in A$. Since $A \subset B$, $x \in B$. Since $B \subset C$, $x \in C$. Therefore $A \subset C$. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+$$	
+A_U^c = [0,3)\cup [7, 10], \quad
+A_{\mathbb{R}}^c = (-\infty, 3) \cup [7, \infty), \quad
+B_U^c = [0,3) \cup (3, 6) \cup (6, 9) \cup (9, 10] 
+$$
+	
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+Consider the following counterexample. Let $A = \{a\}, B = \{b\}$ so that $A\cup B = \{a,b\}$.
+
+\begin{align*}
+\mathcal{P}(A) &= \{\emptyset, \{a\}\} \\
+\mathcal{P}(B) & = \{\emptyset, \{b\} \} \\
+\mathcal{P}(A) \cup \mathcal{P}(B) &= \{\emptyset, \{a\},\{b\} \} \\
+\mathcal{P}(A\cup B) &= \{\emptyset, \{a\},\{b\}, \{a,b\} \} \\
+\mathcal{P}(A) \cup \mathcal{P}(B) &\neq \mathcal{P}(A\cup B)
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\item
+
+\begin{enumerate}
+
+	\item
+	
+	Base case: $\frac{1(1+1)}{2} = 1 = \sum_{i=1}^1 i$.\\
+	Inductive step: Suppose for $k \in \mathbb{Z}^+$ that $			\sum_{i = 1}^k i = \frac{k(k+1)}{2}$. Then,
+	
+	$$
+	\sum_{i=1}^{k+1} i
+	= k+1 + \sum_{i=1}^k i
+	= k+1 + \frac{k(k+1)}{2}
+	= \frac{2(k+1) + k(k+1)}{2}
+	= \frac{(k+1)((k+1)+1}{2} \;.
+	$$
+	
+	The claim holds by the principle of induction.
+	
+	\item
+	
+	Base case: $\frac{1(1+1)(2+1)}{6}=1=1^2=\sum_{i=1}^1i^2$.\\
+	Inductive step: Suppose for $k \in \mathbb{Z}^+$ that $			\sum_{i = 1}^k i^2 = \frac{k(k+1)(2k+1)}{6}$. Then,
+	
+	\begin{align*}
+	\sum_{i=1}^{k+1} i^2 &= (k+1)^2 + \sum_{i=1}^k i^2
+	= (k+1)^2 + \frac{k(k+1)(2k+1)}{6} \\
+	&= \frac{6(k+1)^2 + k(k+1)(2k+1)}{6} \\
+	&= \frac{(k+1)[6(k+1) + 2k^2 + k]}{6} \\
+	&= \frac{(k+1)[2k^2 + 7k + 6]}{6} \\
+	&= \frac{(k+1)[2k(k + 2) + 3(k + 2)]}{6} \\
+	&= \frac{(k+1)(k+2)(2k + 3)}{6} \\
+	&= \frac{(k+1)((k+1)+1)(2(k+1) + 1)}{6}\ \\
+	\end{align*}
+	
+	The claim holds by the principle of induction.
+
+\end{enumerate}
+
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+\begin{enumerate}
+
+	\item
+	
+	{\bf Claim}: For any positive integer $n$,
+	$6 \mid (n^3 - n)$. \\
+	Proof): Note that $n^3-n = (n-1)n(n+1)$ is the product of three 
+	nonnegative integers. Therefore, $3$ divides one of
+	$n-1, n, n+1$. Also, $2$ divides at least one of $n-1, n, n+1$
+	(it is possible that it is the same one in cases like, say $n=12$).
+	Then either one of $n-1, n, n+1$ can be written as a multiple of 
+	both $2$ and $3$, and since $2$ and $3$ are both prime, this number
+	can be written as a multiple of their product $6$. Or, one of 
+	$n-1, n, n+1$ can be written as a multiple of $2$ and another as a 
+	multiple of $3$. Rewriting these numbers as $2k$ and $3j$ for 
+	integers $k,j$ shows that $(n-1)n(n+1)$ is a multiple of $6$. \\
+	
+	{\bf Claim}: For any positive integer $n$,
+	$6 \mid (n^3 - n)$. \\
+	Proof (Induction with two base cases): \\
+	Base case: $6 \mid (1^3 - 1)$ since $1^3 - 1 = 0$ and
+	$6 \mid 0$. Also, $6 \mid (2^3 - 2)$ since $2^3 - 2 = 6$
+	and $6 = 6 \cdot 1 \implies 6 \mid (2^3-2)$.\\
+	Inductive step: Suppose for some $k \in \mathbb{Z}^+$ that
+	$6 \mid k^3 - k$. Then $k^3 - k = 6j$ for some integer $j$.
+	Consider the case for $k+2$. 
+	$$
+	(k+2)^3 - (k+2) = k^3 + 6k^2 + 12k + 8 - (k+2)
+	= k^3 - k +6k^2 + 12k + 6
+	= 6j + 6(k^2 + 2k + 1)\;.
+	$$
+	Thus $(k+2)^3 - (k+2) = 6(j + k^2 + 2k + 1)$, which shows
+	that $6 \mid [(k+2)^3 - (k+2)]$. 
+	
+	\item
+	{\bf Lemma}
+	For any $n \in \mathbb{Z}^+$, $6 \mid 3n(n+1)$. \\
+	Proof (Induction): \\
+	Base case: For $6 \mid 3(1)(1+1)$ since $3(1)(1+1) = 6$. \\
+	Inductive step: Suppose for some $k \in \mathbb{Z}^+$ that
+	$6 \mid 3k(k+1)$. Then $3k(k+1) = 3k^2 + 3k = 6j$ for some
+	integer $j$. Consider the case for $k + 1$.
+	$$
+	3(k+1)(k+2) = 3k^2 + 9k + 6
+	= 3k^2 + 3k + 6k + 6
+	=6(j + k + 1) \;.
+	$$
+	The lemma holds by the principle of induction.\\
+	
+	{\bf Claim}: For any positive integer $n$,
+	$6 \mid (n^3 - n)$.\\
+	Proof (Induction): 
+	Base case: $6 \mid (1^3 - 1)$ since $1^3 - 1 = 0$ and 
+	$6 \mid 0$. \\
+	Inductive step: Suppose for some $k \in \mathbb{Z}^+$ that
+	$6 \mid (k^3 - k)$.
+	Then $k^3 - k = 6j$ for some integer $j$.
+	Consider the case for $k+1$. 
+	$$
+	(k+1)^3 - (k+1) = k^3 + 3k^2 + 3k + 1 - (k+1)
+	= k^3 - k + 3k^2 + 3k
+	= 6j + 6l
+	= 6(j+l) \; ,
+	$$
+	where we used the inductive hypothesis to get 
+	$k^3 - k = 6j$ and the lemma to get $3k^2 + 3k = 6l$ for 
+	some integer $l$. 
+	This shows that $6 \mid [(k+1)^3 - (k+1)]$ and so the
+	claim holds by the principle of induction. 
+
+\end{enumerate}
+
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+Let $A$ and $B$ be sets such that $A\subset B$ and $Q(x)$ be the predicate $Q(x) = x \not\in A$. By Axiom III (specification), there exists a set $S$ such that
+$$
+S = \{x \in B \mid Q(x) \text{ is true} \}
+= \{x \in B \mid x \not \in A\}
+=: A_B^c \;.
+$$
+
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+Proof: Suppose there exists a set $S$ such that $S$ contains all sets. 
+We have seen that $|\mathcal{P}(S)| = 2^{|S|} > |S|$. But since $\mathcal{P}(S)$ is also a set, this would imply that $|\mathcal{P}(S)| \leq |S|$. Thus we have the contradiction,
+$|\mathcal{P}(S)| < |\mathcal{P}(S)|$. \\
+
+Proof: Suppose there exists a set $S$ that contains all sets. By Axiom III, there exists a set $B = \{s \in S \mid s \not\in s\}$. Since $S$ contains all sets, $B \in S$. If $B \in B$, then by definition of $B$, $B \not \in B$. But if $B \not \in B$, then since $B \in S$ and $B \not \in B$, we have $B \in B$. Therefore, if there exists a set $S$ containing all sets, there must exists a set $B$ such that $B \in B$ and $B \not \in B$. Since $B \in B$ and $B \not \in B$ is impossible, there cannot exist a set $S$ containing all sets.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+No, $\emptyset \neq \{\emptyset\}$. By Axiom II, two sets are equal iff they contain the same elements. However, $|\emptyset| = 0$ while $|\{\emptyset \}| = 1$. Since $\emptyset$ and $\{\emptyset \}$ do not even contain the same number of elements, it is impossible for these two sets to contain the same elements. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+In lecture, we used Axioms I,II, and III to prove that there exists uniquely the empty set $\emptyset$. Taking $A = B = \emptyset$ in Axiom IV (pairing), there exists a set $\mathcal{C}$ such that $\emptyset \in \mathcal{C}$. Using Axiom III, we obtain the existence of the set $\{\emptyset \} = \{X \in \mathcal{C} \mid X = \emptyset \}$. Thus we have proved the existence of the sets $\emptyset$ and $\{\emptyset \}$. Taking $A = \emptyset$ and $B = \{ \emptyset \}$ in Axiom IV, there exists a set $\mathcal{C}$ such that $\emptyset, \{\emptyset \} \in \mathcal{C}$. Using Axiom III, we obtain $\{\emptyset, \{\emptyset \} \} = \{X \in \mathcal{C} \mid X = \emptyset \lor X = \{\emptyset \} \}$. Taking $A = B = \{\emptyset \}$ in Axiom IV, there exists a set $\mathcal{C}$ such that $\{\emptyset \} \in \mathcal{C}$. Then by Axiom III there exists the set $\{\{\emptyset \} \} = \{ X \in \mathcal{C} \mid X = \{\emptyset \} \}$. Then similarly, by applying Axiom IV and III  as we just did but with $A = B = \{ \{\emptyset \} \}$ we obtain the existence of the set $\{\{\{\emptyset \} \} \}$. \\
+
+Take $A = \{\emptyset , \{\emptyset\} \}$ and $B = \{\{\{\emptyset \}\}\}$. By Axiom IV there exists a set $\mathcal{C}$ such that $\{\emptyset, \{\emptyset\} \} \in \mathcal{C}$ and $\{\{\{\emptyset \}\}\} \in \mathcal{C}$. By Axiom III, there exists a set
+$$
+\mathcal{A} = \{\; \{\emptyset, \{\emptyset\} \}, \{\{\{\emptyset\}\}\} \; \} = \{ \; X \in \mathcal{C} \mid X = \{\emptyset, \{\emptyset\} \} \lor X = \{\{\{\emptyset\}\}\} \} \; \}
+$$
+
+By Axiom V (unioning), there exists a set $\cup \mathcal{A}$ such that,
+
+$$
+\cup \mathcal{A}
+= \{x \in A \mid A \in \mathcal{A} \}
+= \{\;\emptyset, \{\emptyset \}, \{\{\emptyset \}\} \;\} \;.
+$$
+
+
+
+	
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,294 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{enumerate}
+\setlength\parindent{0pt}
+\usepackage{amssymb}
+\usepackage{dcolumn}
+\newcolumntype{2}{D{.}{}{2.1}}
+\usepackage{tikz}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{% <---- BEWARE
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\setcounter{section}{-1}
+\title{MA 1971 Exercise Set 4 Answers}
+\author{Hubert J. Farnsworth}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%  1  %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+\item
+
+A real number x is called a root number iff $x = \sqrt[n]{m}$ (that is, $x$ is the $n^{\text{th}}$ root of $m$) where $n$ and $m$ are positive integers. Please show that there are a countable number of root numbers.\\
+
+
+\begin{center}
+\renewcommand\arraystretch{1.3}
+\setlength\doublerulesep{0pt}
+\begin{tabular}{r||*{5}{2|}}
+n,m & 1 & 2 & 3 & 4  & \dots \\
+\hline\hline
+1 & \circled{$\sqrt[1]{1}$} & \circled{$\sqrt[1]{2}$} & \circled{$\sqrt[1]{3}$} & \circled{$\sqrt[1]{4}$} & \dots \\ 
+\hline
+2 & \sqrt[2]{1} & \circled{$\sqrt[2]{2}$} & \circled{$\sqrt[2]{3}$} & \sqrt[2]{4} & \dots \\ 
+\hline
+3 & \sqrt[3]{1} & \circled{$\sqrt[3]{2}$} & \circled{$\sqrt[3]{3}$} & \circled{$\sqrt[3]{4}$} & \dots \\ 
+\hline
+4 & \sqrt[4]{1} & \circled{$\sqrt[4]{2}$} & \circled{$\sqrt[4]{3}$} & \circled{$\sqrt[4]{4}$} & \dots \\ 
+\hline
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\ 
+\hline
+\end{tabular}
+\end{center}
+
+We can order the root numbers using a diagonalization scheme similar to that which helps to count the positive rational numbers. The ordering begins as
+
+$$
+\sqrt[1]{1}, \sqrt[1]{2}, \sqrt[1]{3}, \sqrt[2]{2}, \sqrt[1]{4},
+\sqrt[2]{3}, \sqrt[3]{2}, \sqrt[1]{5}, \sqrt[3]{3}, \sqrt[4]{2}, \dots
+$$
+
+To follow the diagonals, we first consider $\sqrt[n]{m}$ such that $m + n = 2$. There is only one such root number, $\sqrt[1]{1} = 1$. Associate this root number with the positive integer 1. Second consider $\sqrt[n]{m}$ such that $n+m = 3$. There are two such root numbers, $\sqrt[1]{2}$ and $\sqrt[2]{2}$, which we associate with the positive integers 2 and 3 respectively. Third consider $\sqrt[n]{m}$ such that $n+m = 4$, and so on. For each root number under consideration, skip over associating the root number to a positive integer if it is equivalent to a previously considered root number. For example, $\sqrt[2]{4} = 2 = \sqrt[1]{2}$ so we skip over $\sqrt[2]{4}$ as $\sqrt[1]{2}$ is already mapped to the positive integer 2. This process puts the root numbers into a one to one correspondence with $\mathbb{Z}^+$ and we thereby conclude that the set of root numbers is countable. 
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%  2  %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+\item
+
+Define the continued fraction
+
+$$
+\frac{1}{3 + 
+	\frac{1}{3-
+		\frac{1}{3 - 
+			\frac{1}{3 - \dots
+			}
+		}
+	}
+}
+$$
+
+as a sequence, then show that this sequence converges, and find its value. \\
+
+This continued fraction can be defined as the limit of the sequence $(a_n)$, where
+
+$$
+a_n = 
+\frac{1}{3}, \frac{1}{3+\frac{1}{3}},
+\frac{1}{3+\frac{1}{3-\frac{1}{3}}},
+\frac{1}{3+\frac{1}{3-\frac{1}{3-\frac{1}{3}}}},
+\frac{1}{3+\frac{1}{3-\frac{1}{3-\frac{1}{3-\frac{1}{3}}}}},
+\frac{1}{3+\frac{1}{3-\frac{1}{3-\frac{1}{3-\frac{1}{3-\frac{1}{3}}}}}},
+\dots
+$$
+
+This sequence is decreasing. In all terms the numerator is 1 so we study how the top level denominator changes to show that the sequence is decreasing. The second term differs from the first in that we replace 3 in the denominator by $3 + \frac{1}{3}$. Since this increases the denominator, the second term is smaller than the first. The third term differs from the second in that we replace $3$ with $3 - \frac{1}{3}$ in the lowest level denominator. Then $\frac{1}{3} < \frac{1}{3-\frac{1}{3}}$ so $3 + \frac{1}{3} < 3 + \frac{1}{3-\frac{1}{3}}$, which means the third term is less than the second term. We can continue this reasoning from each term to subsequent term. From this point on, we replace $3$ with $3 - \frac{1}{3}$ in the lowest level denominator. Unraveling the result shows that each term is less than the previous term. Since the first two terms are positive and from the third term onward we replace $3$ with $3 - \frac{1}{3} > 0$, $a_n > 0$ for all $n$. We can also simplify the expressions for the terms.
+
+$$a_n = 
+\frac{1}{3}, \frac{3}{10}, \frac{8}{27}, \frac{21}{71},
+\frac{55}{186}, \frac{144}{487}, \dots
+$$
+
+Since $(a_n)$ is a decreasing sequence bounded below by 0 (since all terms are positive), $(a_n)$ must converge to some limit $L \in \mathbb{R}$. To determine $L$, first define
+
+$$
+x = \frac{1}{3 - \frac{1}{3 - \frac{1}{3- \dots}}} \;.
+$$
+
+Then,
+
+$$
+\frac{1}{3 + 
+	\frac{1}{3-
+		\frac{1}{3 - 
+			\frac{1}{3 - \dots
+			}
+		}
+	}
+}
+= 
+\frac{1}{3+x}
+\quad \text{ and } \quad
+x = \frac{1}{3-x}
+$$
+
+\begin{align*}
+x &= \frac{1}{3-x} \\
+3x-x^2 &= 1 \\
+x^2 - 3x + 1 &= 0 \\
+x &= \frac{3 \pm \sqrt{5}}{2}
+\end{align*}
+
+So either $\frac{1}{3+x} = \frac{2}{9+\sqrt{5}}$ or $\frac{1}{3+x} = \frac{2}{9-\sqrt{5}}$. By argument similar to that above, $x < 1$, which means that $3+x < 4$ and so $\frac{1}{4} < \frac{1}{3+x}$. That is, the value of the continued fraction must be greater than $\frac{1}{4}$. Conclude that,
+
+$$
+\frac{1}{3 + 
+	\frac{1}{3-
+		\frac{1}{3 - 
+			\frac{1}{3 - \dots
+			}
+		}
+	}
+}
+= 
+\frac{2}{9-\sqrt{5}} \approx 0.295685994
+$$
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%  3  %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+\item
+
+Define the continued radical
+
+$$
+\sqrt{x+\sqrt{x+\sqrt{x+\sqrt{x+\dots}}}}
+$$
+
+as a sequence of functions (expressions), then show that this sequence converges, and find its value as a function of x (expression in x).\\
+
+Define this continued fraction as the sequence $(f_n(x))$ where
+
+$$
+f_1(x) = \sqrt{x}, \quad f_2(x) = \sqrt{x+\sqrt{x}}, \quad
+f_3(x) = \sqrt{x+\sqrt{x+\sqrt{x}}}, \; \dots
+$$
+
+We can define $f_n(x)$ for $x\geq 0$ for all $m$. If $x =0$, we quickly see that $f_n(x) = 0$ for all $n$ so that $0=f(x) = \lim f_n(x)$. So from this point forward we consider the case that $x > 0$. This sequence can be described by a recurrence relation.
+
+$$
+f_1(x) = \sqrt{x}, \quad
+f_{n}(x) = \sqrt{x + f_{n-1}(x)}, \; n > 1 \;.
+$$
+
+\begin{enumerate}
+\item
+First we show that the sequence $(f_n)$ converges by showing that $(f_n)$ is monotone (in particular increasing) and bounded. Note that $f_2(x) - f_1(x) = \sqrt{x+\sqrt{x}} - \sqrt{x} > 0$. For $n \geq 3$,
+
+\begin{align*}
+f_n(x) - f_{n-1}(x) &= \sqrt{x + f_{n-1}(x)} - \sqrt{x + f_{n-2}(x)} \\
+&= \left(\sqrt{x + f_{n-1}(x)} - \sqrt{x + f_{n-2}(x)}\right)
+\frac{\sqrt{x + f_{n-1}(x)} + \sqrt{x + f_{n-2}(x)}}{\sqrt{x + f_{n-1}(x)} + \sqrt{x + f_{n-2}(x)}} \\
+&= \frac{f_{n-1}(x) - f_{n-2}(x)}{\sqrt{x + f_{n-1}(x)} + \sqrt{x + f_{n-2}(x)}} \\
+\end{align*}
+
+Since the denominator in the final line is positive, this shows that the difference $f_n(x) - f_{n-1}(x)$ has the same sign as $f_{n-1}(x) - f_{n-2}(x)$ for all $n \geq 3$. Since $f_2(x) - f_1(x) > 0$, this means that $f_{n}(x) - f_{n-1}(x) > 0$ for all $n\geq 2$. Therefore the sequence increases as $n$ increases for any fixed value $x$. \\
+
+Since $x \geq 0$, $f_n(x) \geq 0$ for all $n$. To show that the sequence is bounded above (once $x$ has been selected), we show by induction that for all $n$, $f_n(x) \leq 4 + x$ as one specific choice of an upper bound. \\
+
+$$f_1(x) = \sqrt{x} \leq  \sqrt{4+x} \leq 4+x \;.$$
+
+Suppose $f_n(x) \leq x+4$. Then $f_{n+1}(x) = \sqrt{x+f_n(x)} \leq \sqrt{2x + 4}$. We have $\sqrt{2x+4} \leq x+4 \iff 0 \leq x^2 + 6x + 12$. Since $x^2 + 6x + 12$ has a positive quadratic coefficient ($a = 1$) and no real roots, $x^2 + 6x + 12 \geq 0$ for all $x$. Thus $f_{n+1} \leq \sqrt{2x+4} \leq x+4$ so we conclude that for a fixed $x \geq 0$, $f_n(x)$ is bounded above as well for all $n$. \\
+
+We have shown that $f_n(x)$ is an increasing sequence bounded above. Therefore $f_n(x)$ converges some limiting function $f(x) = \lim f_n(x)$.
+
+\item
+Next we determine the limit of the sequence $f(x) = \lim f_n(x)$. \\
+
+Since $\lim f_n(x) = \lim f_{n+1}(x)$, we must have $f(x) = \sqrt{x + f(x)}$. For $x = 0$, we know that $f(x) = 0$. For $x > 0$, we use the fact that $f_n(x) > 0$ for all $n$ to determine that $f(x) = \frac{1+\sqrt{1+4x}}{2}$. 
+\end{enumerate}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%  4  %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+\item
+
+Define the continued fraction
+
+$$
+\frac{1}{2 + 
+	\frac{1}{2 -
+		\frac{1}{2 + 
+			\frac{1}{2 - \dots
+			}
+		}
+	}
+}
+$$
+
+as a sequence, then show that the odd elements of this sequence oscillate with
+decreasing amplitude of oscillations, and thus converge to some real number. \\
+
+This continued fraction can be defined as the limit of the sequence $(b_n)$, where
+
+$$
+b_n = 
+\frac{1}{2}, \frac{1}{2+\frac{1}{2}},
+\frac{1}{2+\frac{1}{2-\frac{1}{2}}},
+\frac{1}{2+\frac{1}{2-\frac{1}{2+\frac{1}{2}}}},
+\frac{1}{2+\frac{1}{2-\frac{1}{2+\frac{1}{2-\frac{1}{2}}}}},
+\frac{1}{2+\frac{1}{2-\frac{1}{2+\frac{1}{2-\frac{1}{2+\frac{1}{2}}}}}},
+\frac{1}{2+\frac{1}{2-\frac{1}{2+\frac{1}{2-\frac{1}{2+\frac{1}{2-\frac{1}{2}}}}}}},
+\dots
+$$
+$$
+= \frac{1}{2}, \frac{2}{5}, \frac{3}{8}, \frac{8}{21}, \frac{13}{34},
+\frac{34}{89}, \frac{55}{144}, \dots
+$$
+
+Consider the subsequence made up of the odd terms in $(b_n)$.
+
+$$
+b_{2n-1} = 
+\frac{1}{2}, 
+\frac{1}{2+\frac{1}{2-\frac{1}{2}}},
+\frac{1}{2+\frac{1}{2-\frac{1}{2+\frac{1}{2-\frac{1}{2}}}}},
+\frac{1}{2+\frac{1}{2-\frac{1}{2+\frac{1}{2-\frac{1}{2+\frac{1}{2-\frac{1}{2}}}}}}},
+\dots
+$$
+
+$$
+= \frac{1}{2}, \frac{3}{8}, \frac{13}{34}, \frac{55}{144}, \dots
+$$
+
+We have $1/2 > 3/8$, $3/8 < 13/34$, $13/34 < 55/144$, and this pattern continues: the terms of the subsequence oscillate. However, $1/2, 13/34, \dots$ is decreasing while $3/8, 55/144, \dots$ is increasing. To prove that this behavior continues, consider that the odd terms of the sequence $(b_n)$ are described by the recurrence relation:
+
+$$b_1 = \frac{1}{2},
+\quad b_{n+2} = 
+\frac{1}{2+\frac{1}{2-b_n}}
+\quad \text{ for odd } n \geq 1
+$$
+
+First notice that $b_3 - b_1 < 0$. For $n \geq 3$,
+
+\begin{align*}
+b_{n+2} - b_n &=
+\frac{1}{2+\frac{1}{2-b_n}} - \frac{1}{2+\frac{1}{2-b_{n-2}}} \\
+&= \frac{b_{n-2} - b_n}{(5-2b_n)(5-2b_{n-2})} \;.
+\end{align*}
+
+Since $(5-2b_n)(5-2b_{n-2}) > 0$, this shows that the difference $b_{n+2} - b_n$ has the opposite sign as the difference $b_n - b_{n-2}$. Therefore, the odd terms of $(b_n)$ oscillate. To show that the oscillations tend to zero, use that $5-2b_i > 3 $ for all integers $i$.
+
+\begin{align*}
+|b_{n+2} - b_n| &=
+\biggr\rvert \frac{b_{n-2} - b_n}{(5-2b_n)(5-2b_{n-2})} \biggr\rvert \\
+& < \biggr\rvert \frac{|b_n - b_{n-2}|}{9} \biggr\rvert \\
+& < \biggr\rvert \frac{|b_{n-2} - b_{n-4}|}{9^2} \biggr\rvert \\
+& \vdots \\
+& < |b_3 - b_1| / 9^{(n-1)/2}
+\end{align*}
+
+But this means that as n goes to infinity, the difference between subsequent odd terms goes to 0. That is, although the odd terms oscillate, the oscillations get arbitrarily small as n gets large. Therefore, $|b_{n+2} - b_n| \rightarrow 0$ as $n \rightarrow \infty$. Equivalently, $(b_{2n-1})$ converges. \\
+
+Although beyond the scope of this course, we can also use properties of Cauchy sequences to make the conclusion that $(b_{2n-1})$ converges. The subsequence $(b_{2n-1})$ is oscillating but with decreasing oscillation amplitude. This means that for $m,n$ odd with $m > n$, $|b_m - b_n| \leq |b_{n+2} - b_{n}| \rightarrow 0$ as $n \rightarrow \infty$. Therefore, $(b_{2n-1})$ is Cauchy and so converges to a real number. 
+
+\end{enumerate}
+
+\end{document}

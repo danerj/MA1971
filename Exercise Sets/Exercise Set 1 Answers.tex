@@ -1,0 +1,296 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{enumerate}
+\setlength\parindent{0pt}
+\usepackage{amssymb}
+\setcounter{section}{-1}
+\title{MA 1971 Exercise Set 1 Answers}
+\author{Hubert J. Farnsworth}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+	\begin{enumerate}
+		\item
+		
+		$A(x) = \text{ "} x^2 \geq 0 \text{"}$.
+		
+		Then "For all $x \in \mathbb{R}$, $A(x)$" is true.
+		
+		\item
+		
+		$B(x) = \text{ "} x^2 = 2 \text{"}$.
+		
+		Then "For all $x \in \mathbb{R}$, $B(x)$" is false, but 		"There exists $x \in \mathbb{R}$ such that $B(x)$" is true. 
+		
+	\end{enumerate}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+	\begin{enumerate}
+	\item
+	
+	Hypothesis: "For $x,y,z \in \mathbb{Z}^+$, if $x + y$ is 		odd and $y + $z is odd".
+	
+	Conclusion "Then $x + z$ is odd".
+	
+	This statement is false.
+	
+	\item 
+	
+	Hypothesis: "If $x$ is an integer".
+	
+	Conclusion: "Then $x^2 \geq x$.
+	
+	This statement is true.
+	
+	\item
+	
+	Hypothesis: "For $x \in \mathbb{R}$, if $x^2 > 11$".
+	
+	Conclusion: "Then $x$ is positive".
+	
+	This statement is false.
+	
+	\item
+	
+	Hypothesis: "If $f$ is a polynomial of odd degree".
+	
+	Conclusion: "Then $f$ has at least one real root".
+	
+	This statement is true. 
+	
+	\item
+	
+	Hypothesis: "If $x$ is an integer".
+	
+	Conclusion: "Then $x^3 \geq x$".
+	
+	This statement is false.
+	
+	\end{enumerate}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+	\begin{enumerate}
+	\item
+	
+	\begin{displaymath}
+	\begin{array}{|c|c|c|c|}
+	A & B & A \land (A \implies B) & A \land (A \implies B) 		\implies B \\
+	\hline
+	T & T & T & T\\
+	T & F & F & T\\
+	F & T & F & T\\
+	F & F & F & T\\
+	\end{array}
+	\end{displaymath}
+	
+	\item
+	
+	\begin{displaymath}
+	\begin{array}{|c|c|c|c|c|c|}
+	A & B & C & A \implies (B \land C) & A \implies B & (A 			\implies (B \land C) ) \implies (A \implies B) \\
+	\hline
+	T & T & T & T & T & T\\
+	T & T & F & F & T & T\\
+	T & F & T & F & F & T\\
+	T & F & F & F & F & T\\
+	F & T & T & T & T & T\\
+	F & T & F & T & T & T\\
+	F & F & T & T & T & T\\
+	F & F & F & T & T & T\\
+	\end{array}
+	\end{displaymath}
+	
+	\end{enumerate}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+\begin{displaymath}
+	\begin{array}{|c|c|c|c|}
+	A & B & A \implies B & B \implies A \\
+	\hline
+	T & T & T & T\\
+	T & F & F & T\\
+	F & T & T & F\\
+	F & F & T & T\\
+	\end{array}
+	\end{displaymath}
+	
+\item
+
+\begin{displaymath}
+	\begin{array}{|c|c|c|c|c|c|}
+	A & B & \neg (A \land B) & \neg A \land \neg B 
+	& \neg (A \lor B) & \neg A \lor \neg B\\
+	\hline
+	T & T & F & F & F & F\\
+	T & F & T & F & F & T\\
+	F & T & T & F & F & T\\
+	F & F & T & T & T & T\\
+	\end{array}
+	\end{displaymath}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+$x$ is less than or equal to 7.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+	\begin{enumerate}
+	\item
+	
+	There exists a polynomial with both real and genuinely 			complex roots.
+	
+	\item 
+	
+	There exists an $x \in \mathbb{R}$ such that $x \geq 0$ or 	
+	$x$ is rational.
+	
+	\item
+	
+	There exist $x,y,z \in \mathbb{Z}^+$ such that $x+y$ is odd 
+	or $y+z$ is odd.
+		
+	\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\item
+
+	\begin{enumerate}
+	\item
+	
+	All prime numbers are even.
+	
+	\item
+	
+	There is a real number $x$ such that $x^3>x$ or $x^3<x$.
+	
+	\item
+	
+	There is a positive integer that cannot be written as the
+	sum of distinct powers of three.
+	
+	\item
+	
+	For all positive real numbers $y$, there is a real number
+	$x$ such that $y^2 > x$ or $y^2 < x$. 
+	\end{enumerate}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+	\begin{enumerate}
+	\item
+	
+	There exists an odd integer $x$ such that $x^2$ is odd
+	(True).
+	
+	\item 
+	
+	There exists a continuous function $f$ that is not
+	differentiable (True).
+	
+	\item
+	
+	There exists a differentiable function $f$ that is not
+	continuous (False).
+	
+	\item
+	
+	There exists a polynomial $f$ with integer coefficients
+	that has zero real roots (True).
+	\end{enumerate}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+	\begin{enumerate}
+	\item
+	
+	$27 > 5$ and $27 > 10$
+	
+	\item 
+	
+	$2^3 = 8 \neq 2$.
+	
+	\item
+	
+	The number 2 is a prime number that is even.
+	
+	\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+Let $x,y,z \in \mathbb{Z}$. Suppose $x+y$ and $y+z$ are even. Then there exist integers $k$ and $j$ such that $x + y = 2k$ and $y+z = 2j$. This implies that $x + z = 2k - y + 2j - y = 2(k+j-y)$. Since $k+j-y$ is an integer, this shows that $x+z$ is even.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+	\begin{enumerate}
+	\item
+	
+	If $x^2 \leq 0$, then $x \geq 0$. 
+	
+	\item
+	
+	If there does not exist a $y$ such that $xy = 1$, then
+	$x = 0$.
+	
+	\item
+	
+	If $x^2$ is an odd integer, then $x$ is an odd integer.
+	
+	\item
+	
+	If $x+z$ is even, then $x+y$ is even or $y+z$ is even.
+	
+	\item
+	
+	If $f$ is a polynomial with zero real roots, then $f$ 
+	must be of even degree.
+	
+	\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+\begin{displaymath}
+	\begin{array}{|c|c|c|c|c|c|}
+	Q & \neg Q & P & \neg P & P \land \neg P
+	& \neg Q \implies (P \land \neg P)\\
+	\hline
+	T & F & T & F & T & T\\
+	T & F & T & F & F & T\\
+	F & T & F & T & F & F\\
+	F & T & F & T & F & F\\
+	\end{array}
+	\end{displaymath}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+Suppose that $x$ is an integer assume that $x$ is both even and odd. Then there exist integers $k$ and $j$ such that $x = 2k$ and $x = 2j + 1$. This means $1 = 2k - 2j = 2(k-j)$. Since $k$ and $j$ are integers, $k - j$ is also an integer. It follows that $\frac{1}{2} = k-j$ is an integer. This is a contradiction since $\frac{1}{2} \not\in \mathbb{Z}$. This contradiction arose from the assumption that $x$ is both even and odd and so we must conclude that $x$ cannot be both even and odd. 
+
+	
+\end{enumerate}
+
+
+\end{document}
